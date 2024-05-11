@@ -7,3 +7,6 @@ class Interpreter(Cmd):
     pass
 
 
+if __name__ == "__main__":
+    """Continuously prompt the user for input"""
+    Interpreter.cmdloop()
