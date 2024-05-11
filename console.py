@@ -17,7 +17,7 @@ class Interpreter(Cmd):
     
     def do_EOF(self, input):
         """Handle end-of-file condition. eg: user pressing 'ctrl + D'."""
-        print("\n")
+        print()
         return True
     
     @classmethod
