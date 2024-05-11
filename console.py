@@ -15,7 +15,8 @@ class Interpreter(Cmd):
         """Handle end-of-file condition. eg: user pressing 'ctrl + D'."""
         print("\n")
         return True
-    
+
+
 if __name__ == "__main__":
     """Continuously prompt the user for input"""
     interpreter = Interpreter()
