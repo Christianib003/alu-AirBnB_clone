@@ -7,6 +7,10 @@ class Interpreter(Cmd):
     
     prompt = "(hbnb) "
 
+    def emptyline(self):
+        """Shift cursor to new line when user enters an empty line"""
+        pass
+
     def do_quit(self, input):
         """Handle quiting interpreter when user types 'quit' command"""
         return True
