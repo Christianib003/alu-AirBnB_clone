@@ -19,21 +19,21 @@ class Interpreter(Cmd):
         """Handle end-of-file condition. eg: user pressing 'ctrl + D'."""
         print("\n")
         return True
-
-
-def run_from_file(filename):
-    """Run commands from a file"""
-    with open(filename, 'r') as file:
-        interpreter = Interpreter()
-        for line in file:
-            interpreter.onecmd(line)
+    
+    @classmethod
+    def run_from_file(cls, filename):
+        """Run commands from a file"""
+        with open(filename, 'r') as file:
+            interpreter = cls()
+            for line in file:
+                interpreter.onecmd(line)
 
 
 if __name__ == "__main__":
     """Check if a file is provided as an argument and run commands from it"""
     import sys
     if len(sys.argv) > 1:
-        run_from_file(sys.argv[1])
+        Interpreter.run_from_file(sys.argv[1])
     else:
         interpreter = Interpreter()
         interpreter.cmdloop()
