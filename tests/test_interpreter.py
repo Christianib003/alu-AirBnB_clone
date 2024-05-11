@@ -38,6 +38,12 @@ class TestInterpreter(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as fake_out:
             Interpreter.run_from_file(filename)
             self.assertEqual(fake_out.getvalue(), "\nDocumented commands (type help <topic>):\n========================================\nEOF  help  quit\n\n")
+    
+    def tearDown(self):
+        """Handle cleanup activites after each test case"""
+        del self.interpreter
+        if os.path.exists("test_commands"):
+            os.remove("test_commands")
 
 
 if __name__ == "__main__":
