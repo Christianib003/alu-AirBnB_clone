@@ -15,13 +15,19 @@ class TestInterpreter(unittest.TestCase):
 
     def test_emptyline(self):
         """Test that emptyline method shifts the cursor to new line"""
-        with patch('sys.stdout', new=StringIO()) as fake_out:
+        with patch("sys.stdout", new=StringIO()) as fake_out:
             self.interpreter.emptyline()
             self.assertEqual(fake_out.getvalue(), "")
     
     def test_quit(self):
         """Test that the do_quit method stops the program console"""
         self.assertTrue(self.interpreter.do_quit("quit"))
+
+    def test_EOF(self):
+        """Test that the do_EOF method handles end-of-file condition"""
+        with patch("sys.stdout", new=StringIO()) as fake_out:
+            self.assertTrue(self.interpreter.do_EOF(None))
+            self.assertEqual(fake_out.getvalue(), "\n")
 
 
 if __name__ == "__main__":
