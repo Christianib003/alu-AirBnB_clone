@@ -5,7 +5,7 @@ from cmd import Cmd
 class Interpreter(Cmd):
     """This is a command line interpreter for interacting with the program"""
     
-    prompt = '(hbnb) '
+    prompt = "(hbnb) "
 
     def do_quit(self, input):
         """Handle quiting interpreter when user types 'quit' command"""
