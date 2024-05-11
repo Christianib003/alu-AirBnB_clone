@@ -2,10 +2,11 @@
 
 from cmd import Cmd
 
-prompt = 'hbnb'
 class Interpreter(Cmd):
     """This is a command line interpreter for interacting with the program"""
     
+    prompt = '(hbnb) '
+
     def do_quit(self, input):
         """Handle quiting interpreter when user types 'quit' command"""
         return True
