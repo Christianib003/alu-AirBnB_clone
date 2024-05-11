@@ -3,6 +3,7 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
+
 from console import Interpreter
 
 class TestInterpreter(unittest.TestCase):
@@ -17,6 +18,10 @@ class TestInterpreter(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as fake_out:
             self.interpreter.emptyline()
             self.assertEqual(fake_out.getvalue(), "")
+    
+    def test_quit(self):
+        """Test that the do_quit method stops the program console"""
+        self.assertTrue(self.interpreter.do_quit("quit"))
 
 
 if __name__ == "__main__":
