@@ -3,6 +3,7 @@
 import unittest
 from unittest.mock import patch
 from io import StringIO
+import os
 
 from console import Interpreter
 
@@ -28,6 +29,15 @@ class TestInterpreter(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as fake_out:
             self.assertTrue(self.interpreter.do_EOF(None))
             self.assertEqual(fake_out.getvalue(), "\n")
+
+    def test_run_from_file(self):
+        """Test that interpreter can run input commands from an external file"""
+        filename = "test_commands"
+        with open(filename, "w") as f:
+            f.write("help\n")
+        with patch("sys.stdout", new=StringIO()) as fake_out:
+            Interpreter.run_from_file(filename)
+            self.assertEqual(fake_out.getvalue(), "\nDocumented commands (type help <topic>):\n========================================\nEOF  help  quit\n\n")
 
 
 if __name__ == "__main__":
