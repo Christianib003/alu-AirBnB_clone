@@ -2,13 +2,17 @@
 
 from cmd import Cmd
 
+
 class Interpreter(Cmd):
     """This is a command line interpreter for interacting with the program"""
     
     def do_quit(self, input):
-        """handle the quiting of the interpreter when user types 'quit' command"""
+        """Handle quiting interpreter when user types 'quit' command"""
         return True
-
+    
+    def do_EOF(self, input):
+        """Handle end-of-file condition. eg: user pressing 'ctrl + D'."""
+        return True
     
 if __name__ == "__main__":
     """Continuously prompt the user for input"""
