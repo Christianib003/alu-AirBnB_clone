@@ -21,7 +21,10 @@ class Interpreter(Cmd):
         return True
 
 
-if __name__ == "__main__":
-    """Continuously prompt the user for input"""
-    interpreter = Interpreter()
-    interpreter.cmdloop()
+def run_from_file(filename):
+    """Run commands from a file"""
+    with open(filename, 'r') as file:
+        interpreter = Interpreter()
+        for line in file:
+            interpreter.onecmd(line)
+
