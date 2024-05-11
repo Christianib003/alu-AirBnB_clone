@@ -5,7 +5,10 @@ from console import Interpreter
 
 class TestInterpreter(unittest.TestCase):
     """Test the console interpreter"""
-    pass
+    
+    def setUp(self):
+        """Create a new Interpreter instance before each test case"""
+        self.interpreter = Interpreter()
 
 
 if __name__ == "__main__":
