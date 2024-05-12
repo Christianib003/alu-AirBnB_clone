@@ -105,3 +105,6 @@ Feel free to check the issues page.
 ## Issues
 
 If you encounter any issues or have suggestions for improvement, please submit them [here](https://github.com/Christianib003/alu-AirBnB_clone/issues).
+
+## Show your support
+Give a ⭐️ if you like this project!
