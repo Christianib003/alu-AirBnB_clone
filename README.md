@@ -46,3 +46,13 @@ Once the interpreter is running, you can interact with it by typing commands at 
 (hbnb) quit
 $
 ```
+
+## Features
+
+1. **Property Listings**: Users can list properties for rent, including details like location, price, description, and images.
+
+2. **Search and Filters**: Provide search functionality with filters such as location and amenities.
+
+3. **Responsive Design**: Ensure the web app is accessible and functional across various devices and screen sizes.
+
+4. More to be added.
