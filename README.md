@@ -38,3 +38,11 @@ Once the interpreter is running, you can interact with it by typing commands at 
 - `help`: To get information about the supported commands
 - More commands can be added as the project progresses.
 
+### Examples
+
+1. Quiting the application
+
+```bash
+(hbnb) quit
+$
+```
