@@ -56,3 +56,34 @@ $
 3. **Responsive Design**: Ensure the web app is accessible and functional across various devices and screen sizes.
 
 4. More to be added.
+
+## Implementation Journey
+
+### Console
+
+- **Description**: Create the data model and manage objects via a command-line interpreter.
+
+### Web Static
+
+- **Description**: Create the HTML of the application, and create templates for each object.
+- **Status**: To be implemented.
+
+### MySQL Storage
+
+- **Description**: Replace the file storage with a Database storage using MySQL.
+- **Status**: To be implemented.
+
+### Web Framework - Templating
+
+- **Description**: Create the first web server in Python and make static HTML files dynamic by using objects stored in a file or database.
+- **Status**: To be implemented.
+
+### RESTful API
+
+- **Description**: Expose all objects stored via a JSON web interface and manipulate objects via a RESTful API.
+- **Status**: To be implemented.
+
+### Web Dynamic
+
+- **Description**: Use JQuery and load objects from the client side using your own RESTful API.
+- **Status**: To be implemented.
