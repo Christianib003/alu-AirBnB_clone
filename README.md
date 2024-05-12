@@ -97,3 +97,7 @@ $
 2. **Author 2**
     - Githib: [cyloic](https://github.com/cyloic)
 
+## Contributing
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the issues page.
