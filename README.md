@@ -1,5 +1,22 @@
 # Airbnb Clone
 
+## Table of Contents
+
+- [Description](#description)
+- [Getting Started](#getting-started)
+- [Command Interpreter](#command-interpreter)
+  - [Features](#features)
+  - [How to Use](#how-to-use)
+  - [Examples](#examples)
+- [Implementation Journey](#implementation-journey)
+- [Authors](#authors)
+- [Contributing](#contributing)
+- [Issues](#issues)
+- [Acknowledgement](#acknowledgement)
+- [Show Your Support](#show-your-support)
+
+
+
 ## Description
 
 This project is a clone of the Airbnb web application. It's designed to be deployed on a simple server, created from scratch, and will go through different phases to mimic the functionality of Airbnb.
