@@ -1,9 +1,9 @@
 #! /usr/bin/python3
 
 import unittest
+import os
 from unittest.mock import patch
 from io import StringIO
-import os
 
 from console import Interpreter
 
