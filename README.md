@@ -28,3 +28,13 @@ To get started with the Airbnb Clone, follow these steps:
    ```
 
    You're ready to interact with the application!
+
+### How to Use
+
+Once the interpreter is running, you can interact with it by typing commands at the prompt `(hbnb)`. Here are some available commands:
+
+- `quit`: Exit the interpreter.
+- `EOF`: Exit the interpreter (equivalent to `Ctrl + D`).
+- `help`: To get information about the supported commands
+- More commands can be added as the project progresses.
+
