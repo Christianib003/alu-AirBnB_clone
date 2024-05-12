@@ -87,3 +87,12 @@ $
 
 - **Description**: Use JQuery and load objects from the client side using your own RESTful API.
 - **Status**: To be implemented.
+
+## Authors
+
+1. **Author 1**
+    - Github: [Christianib003](https://github.com/Christianib003)
+    - LinkedIn: [Christian Iradukunda Byiringiro](https://www.linkedin.com/in/christian-iradukunda-byiringiro/)
+
+
+
