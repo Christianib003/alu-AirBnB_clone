@@ -29,3 +29,7 @@ class BaseModel:
         instance_dict["created_at"] = self.created_at.isoformat()
         instance_dict["updated_at"] = self.updated_at.isoformat()
         return instance_dict
+    
+    def __str__(self):
+        """Returns a string representation of the instance"""
+        return f"[{self.__class__.__name__}] ({self.id}) {self.__dict__}"
