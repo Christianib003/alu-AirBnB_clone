@@ -39,6 +39,21 @@ class TestBaseModel(unittest.TestCase):
         # Test if the updated_at attribute is updated
         self.assertEqual(updated_at, self.base_model_instance.updated_at) 
     
+    def test_to_dict(self):
+        """Test if the to_dict method returns the correct dictionary version of the instance"""
+        # Convert the model to a dictionary
+        model_inst_dict = self.base_model_instance.to_dict()
+
+        # Test if __class__ key is in the dictionary
+        self.assertIn("__class__", model_inst_dict)
+
+        # Test if the __class__ key value is the model class name
+        self.assertEqual(model_inst_dict["__class__"], self.base_model_instance.__class__.__name__)
+
+        # Check if created_at and updated_at are in ISO format
+        self.assertEqual(model_inst_dict["created_at"], self.base_model_instance.created_at.isoformat())
+        self.assertEqual(model_inst_dict["updated_at"], self.base_model_instance.updated_at.isoformat())
+    
 
 if __name__ == "__main__":
     unittest.main()
