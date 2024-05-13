@@ -54,6 +54,11 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(model_inst_dict["created_at"], self.base_model_instance.created_at.isoformat())
         self.assertEqual(model_inst_dict["updated_at"], self.base_model_instance.updated_at.isoformat())
     
+    def test_str(self):
+        """Test if the __str__ method returns the correct string representation of the instance"""
+        expected_str = f"[{self.base_model_instance.__class__.__name__}] ({self.base_model_instance.id}) {self.base_model_instance.__dict__}"
+        self.assertEqual(str(self.base_model_instance), expected_str)
+    
 
 if __name__ == "__main__":
     unittest.main()
