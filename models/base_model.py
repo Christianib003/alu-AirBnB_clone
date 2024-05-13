@@ -18,3 +18,14 @@ class BaseModel:
         """Updates the updated_at attribute to the current datetime when the object is updated"""
         self.updated_at = datetime.now()
         return self.updated_at # return the updated "updated_at" attribute
+    
+    def to_dict(self):
+        """Returns a dictionary containing all keys/values of __dict__ of the instance"""
+        instance_dict = self.__dict__.copy() # Use copy() to avoid modifying the original dictionary
+        instance_dict["__class__"] = self.__class__.__name__
+
+        # Convert the datetime objects to ISO format
+        # isoformat() -> %Y-%m-%dT%H:%M:%S.%f (ex: 2017-06-14T22:31:03.285259)
+        instance_dict["created_at"] = self.created_at.isoformat()
+        instance_dict["updated_at"] = self.updated_at.isoformat()
+        return instance_dict
