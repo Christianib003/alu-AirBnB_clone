@@ -25,7 +25,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsNotNone(self.base_model_instance.updated_at)
 
         # Test if the id is a string
-        self.assertIsInstance(self.model.id, str)
+        self.assertIsInstance(self.base_model_instance.id, str)
 
         # Test if created_at and updated_at are datetime objects
         self.assertIsInstance(self.base_model_instance.created_at, datetime)
