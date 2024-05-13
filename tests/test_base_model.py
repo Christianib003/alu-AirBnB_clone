@@ -31,6 +31,14 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsInstance(self.base_model_instance.created_at, datetime)
         self.assertIsInstance(self.base_model_instance.updated_at, datetime)
     
+    def test_save(self):
+        """Test if save method updates the updated_at attribute"""
+        # Save the model
+        updated_at = self.base_model_instance.save()
+
+        # Test if the updated_at attribute is updated
+        self.assertEqual(updated_at, self.model.updated_at) 
+    
 
 if __name__ == "__main__":
     unittest.main()
