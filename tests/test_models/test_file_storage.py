@@ -2,6 +2,7 @@
 
 import unittest
 import os
+import json
 
 from models.engine.file_storage import FileStorage
 from models.base_model import BaseModel
@@ -21,7 +22,10 @@ class TestFileStorage(unittest.TestCase):
         self.storage._FileStorage__file_path = self.test_file
 
     def tearDown(self):
-        """Clean up test effects."""
+        """
+        Clean up method that is called after each test case.
+        Removes the test file created during the test case execution.
+        """
         try:
             os.remove(self.test_file)
         except FileNotFoundError:
@@ -69,6 +73,25 @@ class TestFileStorage(unittest.TestCase):
         self.storage.new(obj1)
         self.storage.new(obj2)
         self.assertEqual(self.storage.all(), {'BaseModel.1': obj2})
+    
+    def test_save(self):
+        """
+        Test the save method of the FileStorage class.
+
+        This method creates a new instance of the BaseModel class, sets its id to '1',
+        adds it to the storage, saves the storage to a file, and then checks if the data
+        in the file matches the expected data.
+
+        Returns:
+            None
+        """
+        my_obj = BaseModel()
+        my_obj.id = '1'
+        self.storage.new(my_obj)
+        self.storage.save()
+        with open(self.storage._FileStorage__file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data, {'BaseModel.1': my_obj.to_dict()})
 
 
 if __name__ == '__main__':
