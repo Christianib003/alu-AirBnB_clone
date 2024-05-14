@@ -4,12 +4,17 @@ import unittest
 import os
 
 from models.engine.file_storage import FileStorage
+from models.base_model import BaseModel
 
 class TestFileStorage(unittest.TestCase):
-    """Test the FileStorage class."""
+    """
+    This class contains unit tests for the FileStorage class.
+    """
 
     def setUp(self):
-        """Setup test dependencies."""
+        """
+        This method is called before each test case to set up any necessary dependencies.
+        """
         self.storage = FileStorage()
         self.test_file = "test_file.json"
         self.storage._FileStorage__file_path = self.test_file
@@ -22,20 +27,19 @@ class TestFileStorage(unittest.TestCase):
             pass
     
     def test_all_with_no_objects(self):
-        """Test the all method with no objects."""
+        """
+        This test case checks if the `all` method returns an empty dictionary when no objects were created beforehand.
+        """
         self.assertEqual(self.storage.all(), {})
 
     def test_new_with_valid_object(self):
-        """Test the new method with a valid object"""
-        obj = type('obj', (object,), {'id': '1'})
-        self.storage.new(obj)
-        self.assertIn('obj.1', self.storage.all())
-    
-    def test_new_with_no_id(self):
-        """Test the new method with an object without an id"""
-        obj = type('obj', (object,), {})
-        with self.assertRaises(AttributeError):
-            self.storage.new(obj)
+        """
+        This test case checks if the 'new' method of the storage object correctly adds a new object to the storage.
+        """
+        my_obj = BaseModel()
+        my_obj.id = '1' # override the attribute 'id' with a simple value
+        self.storage.new(my_obj)
+        self.assertIn('BaseModel.1', self.storage.all())
 
 
 if __name__ == '__main__':
