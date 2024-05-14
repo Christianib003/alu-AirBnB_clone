@@ -91,23 +91,23 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(data, {'BaseModel.1': my_obj.to_dict()})
 
     def test_save_with_multiple_objects(self):
-            """
-            Test case to verify the behavior of the save method when multiple objects are saved.
+        """
+        Test case to verify the behavior of the save method when multiple objects are saved.
 
-            This test case creates two instances of the BaseModel class, sets the id attribute of each instance,
-            adds the instances to the storage, saves the storage, opens the file and loads the data, and asserts
-            that the loaded data matches the expected dictionary.
-            """
-            obj1 = BaseModel()
-            obj1.id = '1'
-            obj2 = BaseModel()
-            obj2.id = '2'
-            self.storage.new(obj1)
-            self.storage.new(obj2)
-            self.storage.save()
-            with open(self.storage._FileStorage__file_path, "r") as f:
-                data = json.load(f)
-            self.assertEqual(data, {'BaseModel.1': obj1.to_dict(), 'BaseModel.2': obj2.to_dict()})
+        This test case creates two instances of the BaseModel class, sets the id attribute of each instance,
+        adds the instances to the storage, saves the storage, opens the file and loads the data, and asserts
+        that the loaded data matches the expected dictionary.
+        """
+        obj1 = BaseModel()
+        obj1.id = '1'
+        obj2 = BaseModel()
+        obj2.id = '2'
+        self.storage.new(obj1)
+        self.storage.new(obj2)
+        self.storage.save()
+        with open(self.storage._FileStorage__file_path, "r") as f:
+            data = json.load(f)
+        self.assertEqual(data, {'BaseModel.1': obj1.to_dict(), 'BaseModel.2': obj2.to_dict()})
 
 
 if __name__ == '__main__':
