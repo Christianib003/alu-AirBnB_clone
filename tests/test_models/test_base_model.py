@@ -36,13 +36,13 @@ class TestBaseModel(unittest.TestCase):
             "id": "123",
             "created_at": "2024-05-14T08:25:00.000000",
             "updated_at": "2024-05-14T08:25:00.000000",
-            "__class__": "BaseModel"
+            "__class__": "BaseModel" # should not be used when creating an instance
         }
         model_with_kwargs = BaseModel(**kwargs)
         self.assertEqual(model_with_kwargs.id, "123")
         self.assertEqual(model_with_kwargs.created_at, datetime.strptime("2022-01-01T00:00:00.000000", "%Y-%m-%dT%H:%M:%S.%f"))
         self.assertEqual(model_with_kwargs.updated_at, datetime.strptime("2022-01-01T00:00:00.000000", "%Y-%m-%dT%H:%M:%S.%f"))
-        self.assertFalse(hasattr(model_with_kwargs, "__class__")) # key __class__ should not be used when creating an instance
+        self.assertFalse(hasattr(model_with_kwargs, "__class__"))
 
     
     def test_save(self):
