@@ -10,9 +10,16 @@ class BaseModel:
 
     def __init__(self, *args, **kwargs):
         """Initialize the Base model with three instance attributes"""
-        self.id = str(uuid.uuid4()) # It's a requirement to convert id to string
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
+        if kwargs:
+            for key, value in kwargs.items():
+                if key == "created_at" or key == "updated_at":
+                    # Convert the datetime string to datetime object
+                    value = datetime.strptime(value, "%Y-%m-%dT%H:%M:%S.%f")
+                if key != "__class__":
+                    setattr(self, key, value)
+        # self.id = str(uuid.uuid4()) # It's a requirement to convert id to string
+        # self.created_at = datetime.now()
+        # self.updated_at = datetime.now()
     
     def save(self):
         """Updates the updated_at attribute to the current datetime when the object is updated"""
