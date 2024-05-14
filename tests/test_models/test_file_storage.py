@@ -30,6 +30,12 @@ class TestFileStorage(unittest.TestCase):
         obj = type('obj', (object,), {'id': '1'})
         self.storage.new(obj)
         self.assertIn('obj.1', self.storage.all())
+    
+    def test_new_with_no_id(self):
+        """Test the new method with an object without an id"""
+        obj = type('obj', (object,), {})
+        with self.assertRaises(AttributeError):
+            self.storage.new(obj)
 
 
 if __name__ == '__main__':
