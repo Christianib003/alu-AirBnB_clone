@@ -25,5 +25,12 @@ class TestFileStorage(unittest.TestCase):
         """Test the all method with no objects."""
         self.assertEqual(self.storage.all(), {})
 
+    def test_new_with_valid_object(self):
+        """Test the new method with a valid object"""
+        obj = type('obj', (object,), {'id': '1'})
+        self.storage.new(obj)
+        self.assertIn('obj.1', self.storage.all())
+
+
 if __name__ == '__main__':
     unittest.main()
