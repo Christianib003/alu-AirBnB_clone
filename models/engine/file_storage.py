@@ -23,3 +23,6 @@ class FileStorage:
             for key, value in self.__objects.items():
                 new_dict[key] = value.to_dict()
             json.dump(new_dict, f)
+    
+    def reload(self):
+        pass

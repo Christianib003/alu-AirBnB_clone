@@ -109,6 +109,23 @@ class TestFileStorage(unittest.TestCase):
             data = json.load(f)
         self.assertEqual(data, {'BaseModel.1': obj1.to_dict(), 'BaseModel.2': obj2.to_dict()})
 
+    def test_reload(self):
+        """
+        Test the reload method of the FileStorage class.
+
+        This test case verifies that the reload method correctly reloads the objects from the file storage.
+        It creates a new instance of the BaseModel class, sets its id to '1', adds it to the file storage,
+        saves the file storage, clears the objects dictionary, and then reloads the objects from disk.
+        Finally, it asserts that the reloaded objects match the original object.
+        """
+        my_obj = BaseModel()
+        my_obj.id = '1'
+        self.storage.new(my_obj)
+        self.storage.save()
+        self.storage._FileStorage__objects = {}
+        self.storage.reload()
+        self.assertEqual(str(self.storage.all()), str({'BaseModel.1': my_obj}))
+
 
 if __name__ == '__main__':
     unittest.main()
