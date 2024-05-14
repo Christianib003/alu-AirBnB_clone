@@ -20,6 +20,10 @@ class TestFileStorage(unittest.TestCase):
             os.remove(self.test_file)
         except FileNotFoundError:
             pass
+    
+    def test_all_with_no_objects(self):
+        """Test the all method with no objects."""
+        self.assertEqual(self.storage.all(), {})
 
 
 if __name__ == '__main__':
