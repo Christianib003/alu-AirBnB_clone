@@ -29,7 +29,7 @@ class TestFileStorage(unittest.TestCase):
         """Test the new method with a valid object"""
         obj = type('obj', (object,), {'id': '1'})
         self.storage.new(obj)
-        self.assertIn('obj.1', self.storage.all())
+        self.assertIn('obj.1', self.storage.__objects)
 
 
 if __name__ == '__main__':

@@ -8,3 +8,5 @@ class FileStorage:
     def all(self):
         """Returns the dictionary __objects"""
         return self.__objects
+    
+    
