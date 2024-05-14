@@ -25,6 +25,5 @@ class TestFileStorage(unittest.TestCase):
         """Test the all method with no objects."""
         self.assertEqual(self.storage.all(), {})
 
-
 if __name__ == '__main__':
     unittest.main()
