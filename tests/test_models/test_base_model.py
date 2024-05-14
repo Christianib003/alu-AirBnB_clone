@@ -38,6 +38,8 @@ class TestBaseModel(unittest.TestCase):
             "updated_at": "2024-05-14T08:25:00.000000",
             "__class__": "BaseModel"
         }
+        model_with_kwargs = BaseModel(**kwargs)
+        self.assertEqual(model_with_kwargs.id, "123")
     
     def test_save(self):
         """Test if save method updates the updated_at attribute"""
