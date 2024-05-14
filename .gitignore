@@ -1,3 +1,5 @@
 /hbnb_env
 /__pycache__
+/models/__pycache__
 /tests/__pycache__
+/tests/test_models/__pycache__
