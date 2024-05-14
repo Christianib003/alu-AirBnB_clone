@@ -8,7 +8,7 @@ from datetime import datetime
 class BaseModel:
     """Base class for all models"""
 
-    def __init__(self):
+    def __init__(self, *args, **kwargs):
         """Initialize the Base model with three instance attributes"""
         self.id = str(uuid.uuid4()) # It's a requirement to convert id to string
         self.created_at = datetime.now()
