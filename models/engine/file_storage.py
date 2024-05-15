@@ -15,4 +15,5 @@ class FileStorage:
     def all(self):
         pass
 
-    
+    def new(self, obj):
+        pass
