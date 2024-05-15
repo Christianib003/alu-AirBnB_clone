@@ -41,6 +41,20 @@ class TestFileStorage(unittest.TestCase):
         # Check that the value associated with this key is the same BaseModel instance.
         self.assertEqual(all_objects['BaseModel.' + self.obj.id], self.obj)
 
+    def test_new(self):
+        """
+        Test the 'new' method of the FileStorage class.
+        """
+        obj2 = BaseModel()
+        self.storage.new(obj2)
+        all_objects = self.storage.all()
+
+        # Check that the dictionary contains the new BaseModel instance.
+        self.assertIn('BaseModel.' + obj2.id, all_objects)
+
+        # Check that the value associated with this key is the new BaseModel instance.
+        self.assertEqual(all_objects['BaseModel.' + obj2.id], obj2)
+
 
 if __name__ == '__main__':
     unittest.main()
