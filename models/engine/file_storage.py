@@ -11,12 +11,6 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
-    def __init__(self):
-        # create the file if it doesn't exist
-        if not os.path.exists(self.__file_path):
-            with open(self.__file_path, 'w') as f:
-                json.dump({}, f)
-
     def all(self):
         """
         Returns the dictionary of all objects currently stored.
