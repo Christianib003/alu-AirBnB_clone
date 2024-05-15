@@ -13,7 +13,10 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        pass
+        """
+        Returns the dictionary of all objects currently stored.
+        """
+        return FileStorage.__objects
 
     def new(self, obj):
         pass
