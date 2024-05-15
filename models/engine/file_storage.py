@@ -8,9 +8,15 @@ class FileStorage:
     """
     This class represents a file storage system for storing and retrieving objects in JSON format.
     """
+    def __init__(self):
+        # create the file if it doesn't exist
+        if not os.path.exists(self.__file_path):
+            with open(self.__file_path, 'w') as f:
+                json.dump({}, f)
 
     __file_path = "file.json"
     __objects = {}
+
 
     def all(self):
         """
