@@ -28,6 +28,14 @@ class TestFileStorage(unittest.TestCase):
             os.remove('file.json')
         except FileNotFoundError:
             pass
+    
+    def test_class_attributes(self):
+        """
+        Test the class attributes of FileStorage.
+        """
+        self.assertEqual(FileStorage._FileStorage__file_path, "file.json")
+        self.assertIsInstance(FileStorage._FileStorage__objects, dict)
+
 
     def test_all(self):
         """
