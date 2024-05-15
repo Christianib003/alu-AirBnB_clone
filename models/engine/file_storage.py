@@ -17,3 +17,6 @@ class FileStorage:
 
     def new(self, obj):
         pass
+
+    def save(self):
+        pass
