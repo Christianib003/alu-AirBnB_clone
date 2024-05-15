@@ -5,4 +5,9 @@ import os
 from models.base_model import BaseModel
 
 class FileStorage:
-    pass
+    """
+    This class represents a file storage system for storing and retrieving objects in JSON format.
+    """
+
+    __file_path = "file.json"
+    __objects = {}
