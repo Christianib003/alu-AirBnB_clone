@@ -19,7 +19,14 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        pass
+        """
+        Adds a new object to the storage system.
+
+        Args:
+            obj: The object to be added.
+        """
+        key = f"{obj.__class__.__name__}.{obj.id}"
+        FileStorage.__objects[key] = obj
 
     def save(self):
         pass
