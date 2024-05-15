@@ -43,16 +43,13 @@ class FileStorage:
         Loads objects from a JSON file into the storage system.
         """
         try:
-            if os.path.exists(FileStorage.__file_path):
-                with open(FileStorage.__file_path, "r") as file:
-                    obj_dict = json.load(file)
-                    for key, value in obj_dict.items():
-                        class_name, obj_id = key.split(".")
-                        cls = eval(class_name)
-                        inst = cls(**value)
-                        FileStorage.__objects[key] = inst
-            else:
-                FileStorage.__objects = {}
+            with open(FileStorage.__file_path, "r") as file:
+                obj_dict = json.load(file)
+                for key, value in obj_dict.items():
+                    class_name, obj_id = key.split(".")
+                    cls = eval(class_name)
+                    inst = cls(**value)
+                    FileStorage.__objects[key] = inst
         except:
             pass
     
