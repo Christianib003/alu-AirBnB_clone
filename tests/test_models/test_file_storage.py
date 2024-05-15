@@ -27,6 +27,20 @@ class TestFileStorage(unittest.TestCase):
         except FileNotFoundError:
             pass
 
+    def test_all(self):
+        """
+        Test the 'all' method of the FileStorage class.
+        """
+        # Call the 'all' on storage to return a dictionary of all objects 
+        # currently stored in the instance.
+        all_objects = self.storage.all()
+
+        # Check that the dictionary contains the BaseModel instance created in the setUp method.
+        self.assertIn('BaseModel.' + self.obj.id, all_objects)
+
+        # Check that the value associated with this key is the same BaseModel instance.
+        self.assertEqual(all_objects['BaseModel.' + self.obj.id], self.obj)
+
 
 if __name__ == '__main__':
     unittest.main()
