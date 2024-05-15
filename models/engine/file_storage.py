@@ -29,7 +29,16 @@ class FileStorage:
         FileStorage.__objects[key] = obj
 
     def save(self):
-        pass
+        """
+        Saves all objects in the storage system to a JSON file.
+        """
+        all_objects = FileStorage.__objects
+        obj_dict = {}
+        for key, value in all_objects.items():
+            obj_dict[key] = value.to_dict()
+        with open(FileStorage.__file_path, "w") as file:
+            json.dump(obj_dict, file)
 
     def reload(self):
         pass
+        
