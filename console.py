@@ -1,4 +1,5 @@
 #! /usr/bin/python3
+"""This module contains the command line interpreter for the program"""
 
 import cmd
 
