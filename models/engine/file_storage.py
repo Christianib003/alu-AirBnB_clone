@@ -20,3 +20,6 @@ class FileStorage:
 
     def save(self):
         pass
+
+    def reload(self):
+        pass
