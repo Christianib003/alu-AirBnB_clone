@@ -55,6 +55,26 @@ class TestFileStorage(unittest.TestCase):
         # Check that the value associated with this key is the new BaseModel instance.
         self.assertEqual(all_objects['BaseModel.' + obj2.id], obj2)
 
+    def test_save(self):
+        """
+        Test the 'save' method of the FileStorage class.
+        """
+        # Save all objects currently stored in the instance to a file named 'file.json'.
+        self.storage.save()
+
+        # Check that the file 'file.json' is created.
+        self.assertTrue(os.path.exists('file.json'))
+
+        # Open the file 'file.json' and load its contents into a dictionary.
+        with open('file.json', 'r') as f:
+            obj_dict = json.load(f)
+
+        # Check that the dictionary contains the BaseModel instance created in the setUp method.
+        self.assertIn('BaseModel.' + self.obj.id, obj_dict)
+
+        # Check that the 'id' attribute of the dictionary entry for this instance is the same as the 'id' of the instance.
+        self.assertEqual(obj_dict['BaseModel.' + self.obj.id]['id'], self.obj.id)
+
 
 if __name__ == '__main__':
     unittest.main()
