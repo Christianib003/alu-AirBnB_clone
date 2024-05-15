@@ -37,8 +37,27 @@ class FileStorage:
         for key, value in all_objects.items():
             obj_dict[key] = value.to_dict()
         with open(FileStorage.__file_path, "w") as file:
-            json.dump(obj_dict, file)
-
+            json.dump(obj_dict, file)    
+        
     def reload(self):
-        pass
+        """
+        Loads objects from a JSON file into the storage system.
+        """
+        try:
+            with open(FileStorage.__file_path, "r") as file:
+                obj_dict = json.load(file)
+                for key, value in obj_dict.items():
+                    class_name, obj_id = key.split(".")
+                    cls = eval(class_name)
+                    inst = cls(**value)
+                    FileStorage.__objects[key] = inst
+        except:
+            pass
+    
+    # For testing purposes only
+    def reset(self):
+        """
+        Resets the storage system by clearing all objects.
+        """
+        self._FileStorage__objects = {}
         
