@@ -81,6 +81,27 @@ class TestAmenity(unittest.TestCase):
         # Check if the key exists in objects
         self.assertTrue(key in objects)
     
+    def test_amenity_to_dict(self):
+        """
+        Tests the to_dict method of Amenity.
+        """
+        # Create a new Amenity instance
+        amenity = Amenity()
+
+        # Set attributes for Amenity
+        amenity.name = "Wifi"
+
+        # Convert Amenity to dictionary
+        amenity_dict = amenity.to_dict()
+
+        # Assert that the dictionary is formatted correctly
+        self.assertEqual(amenity_dict, {
+            "id": amenity.id,
+            "created_at": amenity.created_at.isoformat(),
+            "updated_at": amenity.updated_at.isoformat(),
+            "name": "Wifi",
+            "__class__": "Amenity"
+        })
     
 if __name__ == "__main__":
     unittest.main()
