@@ -61,6 +61,9 @@ class TestState(unittest.TestCase):
         # Create a new State instance
         state = State()
 
+        # Add the name of the state
+        state.name = "Michigan"
+
         # Assert that the string representation of State is correct
         self.assertEqual(str(state), f"[State] ({state.id}) {state.__dict__}")
 
@@ -70,6 +73,9 @@ class TestState(unittest.TestCase):
         """
         # Create a new State instance
         state = State()
+
+        # Add the name of the state
+        state.name = "Michigan"
 
         # Get the dictionary representation of the State instance
         state_dict = state.to_dict()
