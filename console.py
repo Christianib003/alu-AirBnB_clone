@@ -10,6 +10,9 @@ class HBNBCommand(cmd.Cmd):
     
     prompt = "(hbnb) "
 
+    # Define classes which can be created using the "create" command
+    valid_classes = ["BaseModel"]
+
     def emptyline(self):
         """Shift cursor to new line when user enters an empty line"""
         pass
