@@ -3,7 +3,9 @@
 
 import cmd
 import shlex
+
 from models.base_model import BaseModel
+from models.user import User
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
@@ -12,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
-    valid_classes = ["BaseModel"]
+    valid_classes = ["BaseModel", "User"]
 
     def do_create(self, input):
         """Create a new instance of a class"""
