@@ -45,7 +45,15 @@ class TestCity(unittest.TestCase):
         self.assertEqual(city.state_id, "")
         self.assertEqual(city.name, "")
     
-    
+    def test_city_inherits_from_basemodel(self):
+        """
+        Tests that City inherits from BaseModel.
+        """
+        # Create a new City instance
+        city = City()
+
+        # Assert that City is a subclass of BaseModel
+        self.assertTrue(issubclass(type(city), BaseModel))
 
 if __name__ == "__main__":
     unittest.main()
