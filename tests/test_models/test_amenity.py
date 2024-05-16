@@ -62,5 +62,25 @@ class TestAmenity(unittest.TestCase):
         # Assert that the string representation of Amenity is correct
         self.assertEqual(str(amenity), f"[Amenity] ({amenity.id}) {amenity.__dict__}")
 
+    def test_amenity_save(self):
+        """
+        Tests the save method of Amenity.
+        """
+        # Create a new Amenity instance
+        amenity = Amenity()
+
+        # Save the Amenity
+        amenity.save()
+
+        # Get all stored objects
+        objects = storage.all()
+
+        # Construct the key
+        key = f"{amenity.__class__.__name__}.{amenity.id}"
+
+        # Check if the key exists in objects
+        self.assertTrue(key in objects)
+    
+    
 if __name__ == "__main__":
     unittest.main()
