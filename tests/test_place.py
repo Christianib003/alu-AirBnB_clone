@@ -23,6 +23,17 @@ class TestPlace(unittest.TestCase):
 
         # Save the file
         storage.save()
+    
+    def tearDown(self):
+        """
+        Removes the temporary test file if it exists.
+        """
+        try:
+            # Try removing the test file
+            os.remove("test_file.json")
+        except FileNotFoundError:
+            # Ignore if the file doesn't exist
+            pass
 
 if __name__ == "__main__":
     unittest.main()
