@@ -34,6 +34,16 @@ class TestState(unittest.TestCase):
             # Ignore if the file doesn't exist
             pass
     
+    def test_state_attributes(self):
+        """
+        Tests the default values of State attributes.
+        """
+        # Create a new State instance
+        state = State()
+
+        # Assert that name is an empty string
+        self.assertEqual(state.name, "")
+
     
 if __name__ == "__main__":
     unittest.main()
