@@ -33,6 +33,19 @@ class TestCity(unittest.TestCase):
         except FileNotFoundError:
             # Ignore if the file doesn't exist
             pass
+    
+    def test_city_attributes(self):
+        """
+        Tests the default values of City attributes.
+        """
+        # Create a new City instance
+        city = City()
+
+        # Assert that state_id and name are empty strings
+        self.assertEqual(city.state_id, "")
+        self.assertEqual(city.name, "")
+    
+    
 
 if __name__ == "__main__":
     unittest.main()
