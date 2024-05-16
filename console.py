@@ -176,10 +176,10 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    """Check if a file is provided as an argument and run commands from it"""
-    import sys
-    if len(sys.argv) > 1:
-        HBNBCommand.run_from_file(sys.argv[1])
-    else:
-        interpreter = HBNBCommand()
-        interpreter.cmdloop()
+        """Check if a file is provided as an argument and run commands from it"""
+        import sys
+        if len(sys.argv) > 1:
+            HBNBCommand.run_from_file(sys.argv[1])
+        else:
+            interpreter = HBNBCommand()
+            interpreter.cmdloop()
