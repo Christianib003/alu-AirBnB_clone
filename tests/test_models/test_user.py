@@ -54,7 +54,19 @@ class TestUser(unittest.TestCase):
         # Assert that User is a subclass of BaseModel
         self.assertTrue(issubclass(type(user), BaseModel))
 
-    
+    def test_user_string_representation(self):
+        """
+        Tests the string representation of User.
+        """
+        # Create a new User instance
+        user = User()
+
+        # Get the string representation of User
+        user_str = str(user)
+
+        # Assert that the string representation is formatted correctly
+        self.assertEqual(user_str, f"[User] ({user.id}) {user.__dict__}")
+
 
 if __name__ == "__main__":
     unittest.main()
