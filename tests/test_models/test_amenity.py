@@ -51,6 +51,16 @@ class TestAmenity(unittest.TestCase):
 
         # Assert that Amenity is a subclass of BaseModel
         self.assertTrue(issubclass(type(amenity), BaseModel))
+    
+    def test_amenity_string_representation(self):
+        """
+        Tests the string representation of Amenity.
+        """
+        # Create a new Amenity instance
+        amenity = Amenity()
+
+        # Assert that the string representation of Amenity is correct
+        self.assertEqual(str(amenity), f"[Amenity] ({amenity.id}) {amenity.__dict__}")
 
 if __name__ == "__main__":
     unittest.main()
