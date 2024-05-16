@@ -14,7 +14,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
-    valid_classes = ["BaseModel", "User", "State"]
+    valid_classes = ["BaseModel", "User", "State", "City"]
 
     def do_create(self, input):
         """Create a new instance of a class"""
