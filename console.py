@@ -84,6 +84,68 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
+    
+    def do_all(self, input):
+        """Prints all string representation of all instances based or not on the class name.
+
+        Args:
+            input (str): The input string containing the class name.
+
+        Returns:
+            None
+        """
+        args = shlex.split(input)
+
+        # if no class name is provided, print all instances
+        if len(args) == 0:
+            objects = storage.all()
+            print([str(obj) for obj in objects.values()])
+        
+        # if an invalid class name is provided, notify user
+        elif args[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        
+        # if a valid class name is provided, print all instances of that class
+        else:
+            objects = storage.all()
+            for key, value in objects.items():
+                if key.split(".")[0] == args[0]:
+                    print(str(value))
+    
+    def do_update(self, input):
+        """Updates an instance based on the class name and id by adding or updating attribute.
+
+        Args:
+            input (str): The input string containing the class name, instance id, attribute name, and attribute value.
+
+        Returns:
+            None
+        """
+        args = shlex.split(input)
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif len(args) == 2:
+            print("** attribute name missing **")
+        elif len(args) == 3:
+            print("** value missing **")
+        else:
+            # Get all currently stored objects
+            objects = storage.all()
+
+            # Construct a key in format "<class name>.<id>"
+            key = args[0] + "." + args[1]
+
+            # Update the object if key exists in objects
+            if key in objects:
+                obj = objects[key]
+                setattr(obj, args[2], args[3])
+                obj.save()
+            else:
+                print("** no instance found **")    
 
     def emptyline(self):
         """Shift cursor to new line when user enters an empty line"""
