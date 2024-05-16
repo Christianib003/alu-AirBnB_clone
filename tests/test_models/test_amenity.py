@@ -30,7 +30,27 @@ class TestAmenity(unittest.TestCase):
             os.remove("test_file.json")
         except FileNotFoundError:
             # Ignore if the file doesn't exist
-            pass    
+            pass
+    
+    def test_amenity_attributes(self):
+        """
+        Tests the default values of Amenity attributes.
+        """
+        # Create a new Amenity instance
+        amenity = Amenity()
+
+        # Assert that name is an empty string
+        self.assertEqual(amenity.name, "")
+    
+    def test_amenity_inherits_from_basemodel(self):
+        """
+        Tests that Amenity inherits from BaseModel.
+        """
+        # Create a new Amenity instance
+        amenity = Amenity()
+
+        # Assert that Amenity is a subclass of BaseModel
+        self.assertTrue(issubclass(type(amenity), BaseModel))
 
 if __name__ == "__main__":
     unittest.main()
