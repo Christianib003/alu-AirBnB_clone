@@ -79,13 +79,30 @@ class TestCity(unittest.TestCase):
         # Get the dictionary representation of City
         city_dict = city.to_dict()
 
-        # Assert that the dictionary representation has the correct keys
-        self.assertIn("id", city_dict)
-        self.assertIn("created_at", city_dict)
-        self.assertIn("updated_at", city_dict)
-        self.assertIn("__class__", city_dict)
-        self.assertIn("state_id", city_dict)
-        self.assertIn("name", city_dict)
+        # Assert that the dictionary representation has the correct values
+        self.assertEqual(city_dict["id"], city.id)
+        self.assertEqual(city_dict["created_at"], city.created_at.isoformat())
+        self.assertEqual(city_dict["updated_at"], city.updated_at.isoformat())
+        self.assertEqual(city_dict["__class__"], "City")
+        self.assertEqual(city_dict["state_id"], "123")
+        self.assertEqual(city_dict["name"], "Michigan")
+
+    def test_city_save(self):
+        """
+        Tests the save method of City.
+        """
+        # Create a new City instance
+        city = City()
+
+        # Save the City instance
+        city.save()
+
+        # Get all objects stored in the storage
+        objects = storage.all()
+
+        # Construct the key for the City instance
+        key = f"City.{city.id}"
+
 
 if __name__ == "__main__":
     unittest.main()
