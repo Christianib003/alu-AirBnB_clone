@@ -4,6 +4,7 @@
 import cmd
 import shlex
 from models.base_model import BaseModel
+from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """This is a command line interpreter for interacting with the program"""
@@ -24,6 +25,35 @@ class HBNBCommand(cmd.Cmd):
             new_instance = eval(args[0])()
             new_instance.save()
             print(new_instance.id)
+    
+    def do_show(self, input):
+        """Prints the string representation of an instance.
+
+        Args:
+            input (str): The input string containing the class name and instance id.
+
+        Returns:
+            None
+        """
+        args = shlex.split(input)
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        else:
+            # Get all currently stored objects
+            objects = storage.all()
+
+            # Construct a key in format "<class name>.<id>"
+            key = args[0] + "." + args[1]
+
+            # Check if key exists in objects
+            if key in objects:
+                print(objects[key])
+            else:
+                print("** no instance found **")
 
     def emptyline(self):
         """Shift cursor to new line when user enters an empty line"""
