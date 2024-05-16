@@ -103,6 +103,5 @@ class TestReview(unittest.TestCase):
         self.assertIn(review, all_objects.values())
 
 
-
 if __name__ == "__main__":
     unittest.main()
