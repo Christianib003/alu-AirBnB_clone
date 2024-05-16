@@ -44,6 +44,16 @@ class TestState(unittest.TestCase):
         # Assert that name is an empty string
         self.assertEqual(state.name, "")
 
+    def test_state_inherits_from_basemodel(self):
+        """
+        Tests that State inherits from BaseModel.
+        """
+        # Create a new State instance
+        state = State()
+
+        # Assert that State is a subclass of BaseModel
+        self.assertTrue(issubclass(type(state), BaseModel))
+
     
 if __name__ == "__main__":
     unittest.main()
