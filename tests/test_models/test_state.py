@@ -54,6 +54,17 @@ class TestState(unittest.TestCase):
         # Assert that State is a subclass of BaseModel
         self.assertTrue(issubclass(type(state), BaseModel))
 
+    def test_state_string_representation(self):
+        """
+        Tests the string representation of State.
+        """
+        # Create a new State instance
+        state = State()
+
+        # Assert that the string representation of State is correct
+        self.assertEqual(str(state), f"[State] ({state.id}) {state.__dict__}")
+
     
+
 if __name__ == "__main__":
     unittest.main()
