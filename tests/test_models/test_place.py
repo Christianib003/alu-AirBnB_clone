@@ -54,6 +54,16 @@ class TestPlace(unittest.TestCase):
         self.assertEqual(place.latitude, 0.0)
         self.assertEqual(place.longitude, 0.0)
         self.assertEqual(place.amenity_ids, [])
+    
+    def test_place_inherits_from_basemodel(self):
+        """
+        Tests that Place inherits from BaseModel.
+        """
+        # Create a new Place instance
+        place = Place()
+
+        # Assert that Place is a subclass of BaseModel
+        self.assertTrue(issubclass(type(place), BaseModel))
 
 if __name__ == "__main__":
     unittest.main()
