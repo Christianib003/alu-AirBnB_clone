@@ -3,4 +3,10 @@
 from models.base_model import BaseModel
 
 class User(BaseModel):
-    pass
+    """
+    This class defines the User object.
+    """
+    email = ""
+    password = ""
+    first_name = ""
+    last_name = ""
