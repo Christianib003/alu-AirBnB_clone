@@ -54,6 +54,36 @@ class HBNBCommand(cmd.Cmd):
                 print(objects[key])
             else:
                 print("** no instance found **")
+    
+    def do_destroy(self, input):
+        """Deletes an instance based on the class name and id.
+
+        Args:
+            input (str): The input string containing the class name and instance id.
+
+        Returns:
+            None
+        """
+        args = shlex.split(input)
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.valid_classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        else:
+            # Get all currently stored objects
+            objects = storage.all()
+
+            # Construct a key in format "<class name>.<id>"
+            key = args[0] + "." + args[1]
+
+            # Check if key exists in objects
+            if key in objects:
+                del objects[key]
+                storage.save()
+            else:
+                print("** no instance found **")
 
     def emptyline(self):
         """Shift cursor to new line when user enters an empty line"""
