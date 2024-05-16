@@ -64,7 +64,25 @@ class TestState(unittest.TestCase):
         # Assert that the string representation of State is correct
         self.assertEqual(str(state), f"[State] ({state.id}) {state.__dict__}")
 
-    
+    def test_state_to_dict(self):
+        """
+        Tests the to_dict method of State.
+        """
+        # Create a new State instance
+        state = State()
+
+        # Get the dictionary representation of the State instance
+        state_dict = state.to_dict()
+
+        # Assert that the dictionary representation has the correct class key
+        self.assertEqual(state_dict["__class__"], "State")
+
+        # Assert that the dictionary representation has the correct attributes
+        self.assertEqual(state_dict["id"], state.id)
+        self.assertEqual(state_dict["created_at"], state.created_at.isoformat())
+        self.assertEqual(state_dict["updated_at"], state.updated_at.isoformat())
+        self.assertEqual(state_dict["name"], state.name)
+
 
 if __name__ == "__main__":
     unittest.main()
