@@ -6,6 +6,9 @@ import shlex
 
 from models.base_model import BaseModel
 from models.user import User
+from models.city import City
+from models.state import State
+from models.amenity import Amenity
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
@@ -14,7 +17,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
-    valid_classes = ["BaseModel", "User", "State", "City"]
+    valid_classes = ["BaseModel", "User", "State", "City", "Amenity"]
 
     def do_create(self, input):
         """Create a new instance of a class"""
