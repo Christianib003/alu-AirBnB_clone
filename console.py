@@ -2,6 +2,8 @@
 """This module contains the command line interpreter for the program"""
 
 import cmd
+import shlex
+from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
     """This is a command line interpreter for interacting with the program"""
