@@ -10,6 +10,7 @@ from models.city import City
 from models.state import State
 from models.amenity import Amenity
 from models.place import Place
+from models.review import Review
 from models import storage
 
 class HBNBCommand(cmd.Cmd):
@@ -18,7 +19,7 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
-    valid_classes = ["BaseModel", "User", "State", "City", "Amenity", "Place"]
+    valid_classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
 
     def do_create(self, input):
         """Create a new instance of a class"""
