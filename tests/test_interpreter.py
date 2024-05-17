@@ -31,7 +31,9 @@
 #             self.assertEqual(fake_out.getvalue(), "\n")
 
 #     def test_run_from_file(self):
-#         """Test that interpreter can run input commands from an external file"""
+#         """
+#         Test that interpreter can run input commands from an external file
+#         """
 #         filename = "test_commands"
 #         with open(filename, "w") as f:
 #             f.write("help\n")
