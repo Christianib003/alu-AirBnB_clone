@@ -15,7 +15,9 @@ from models import storage
 
 
 class HBNBCommand(cmd.Cmd):
-    """This is a command line interpreter for interacting with the program"""
+    """
+    This is a command line interpreter for interacting with the program
+    """
 
     prompt = "(hbnb) "
 
@@ -45,7 +47,8 @@ class HBNBCommand(cmd.Cmd):
         """Prints the string representation of an instance.
 
         Args:
-            input (str): The input string containing the class name and instance id.
+            input (str): The input string containing the class name and
+            instance id.
 
         Returns:
             None
@@ -74,7 +77,8 @@ class HBNBCommand(cmd.Cmd):
         """Deletes an instance based on the class name and id.
 
         Args:
-            input (str): The input string containing the class name and instance id.
+            input (str): The input string containing the class name and
+            instance id.
 
         Returns:
             None
@@ -101,7 +105,8 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, input):
-        """Prints all string representation of all instances based or not on the class name.
+        """Prints all string representation of all instances based or
+        not on the class name.
 
         Args:
             input (str): The input string containing the class name.
@@ -128,10 +133,12 @@ class HBNBCommand(cmd.Cmd):
                     print(str(value))
 
     def do_update(self, input):
-        """Updates an instance based on the class name and id by adding or updating attribute.
+        """Updates an instance based on the class name and id by adding 
+        or updating attribute.
 
         Args:
-            input (str): The input string containing the class name, instance id, attribute name, and attribute value.
+            input (str): The input string containing the class name,
+            instance id, attribute name, and attribute value.
 
         Returns:
             None
