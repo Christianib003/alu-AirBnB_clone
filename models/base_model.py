@@ -10,7 +10,9 @@ class BaseModel:
     """Base class for all models"""
 
     def __init__(self, *args, **kwargs):
-        """Initialize the Base model with three instance attributes"""
+        """
+        Initialize the Base model with three instance attributes
+        """
 
         self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
@@ -27,13 +29,18 @@ class BaseModel:
         models.storage.new(self)
 
     def save(self):
-        """Updates the updated_at attribute to the current datetime when the object is updated"""
+        """
+        Updates the updated_at attribute to the current datetime when the
+        object is updated
+        """
         self.updated_at = datetime.now()
         models.storage.save()
         return self.updated_at
 
     def to_dict(self):
-        """Returns a dictionary containing all keys/values of __dict__ of the instance"""
+        """Returns a dictionary containing all keys/values of __dict__
+        of the instance
+        """
         instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
 
