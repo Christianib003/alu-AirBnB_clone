@@ -6,13 +6,15 @@ from models.base_model import BaseModel
 from models.user import User
 from models.state import State
 from models.city import City
-from models.amenity import Amenity 
+from models.amenity import Amenity
 from models.place import Place
 from models.review import Review
 
+
 class FileStorage:
     """
-    This class represents a file storage system for storing and retrieving objects in JSON format.
+    This class represents a file storage system for storing
+    and retrieving objects in JSON format.
     """
     __file_path = "file.json"
     __objects = {}
@@ -42,8 +44,8 @@ class FileStorage:
         for key, value in all_objects.items():
             obj_dict[key] = value.to_dict()
         with open(FileStorage.__file_path, "w") as file:
-            json.dump(obj_dict, file)    
-        
+            json.dump(obj_dict, file)
+
     def reload(self):
         """
         Loads objects from a JSON file into the storage system.
@@ -58,7 +60,7 @@ class FileStorage:
                     FileStorage.__objects[key] = inst
         except:
             pass
-    
+
     # For testing purposes only
     def reset(self):
         """
