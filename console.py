@@ -133,7 +133,7 @@ class HBNBCommand(cmd.Cmd):
                     print(str(value))
 
     def do_update(self, input):
-        """Updates an instance based on the class name and id by adding 
+        """Updates an instance based on the class name and id by adding
         or updating attribute.
 
         Args:
@@ -167,7 +167,7 @@ class HBNBCommand(cmd.Cmd):
                 setattr(obj, args[2], args[3])
                 obj.save()
             else:
-                print("** no instance found **")    
+                print("** no instance found **")
 
     def emptyline(self):
         """Shift cursor to new line when user enters an empty line"""
@@ -198,7 +198,6 @@ class HBNBCommand(cmd.Cmd):
 
 
 if __name__ == "__main__":
-    """Check if a file is provided as an argument and run commands from it"""
     HBNBCommand().cmdloop()
     # import sys
     # if len(sys.argv) > 1:
