@@ -12,7 +12,7 @@ class BaseModel:
     def __init__(self, *args, **kwargs):
         """Initialize the Base model with three instance attributes"""
 
-        self.id = str(uuid.uuid4()) # It's a requirement to convert id to string
+        self.id = str(uuid.uuid4())
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
@@ -30,11 +30,11 @@ class BaseModel:
         """Updates the updated_at attribute to the current datetime when the object is updated"""
         self.updated_at = datetime.now()
         models.storage.save()
-        return self.updated_at # return the updated "updated_at" attribute
+        return self.updated_at
 
     def to_dict(self):
         """Returns a dictionary containing all keys/values of __dict__ of the instance"""
-        instance_dict = self.__dict__.copy() # Use copy() to avoid modifying the original dictionary
+        instance_dict = self.__dict__.copy()
         instance_dict["__class__"] = self.__class__.__name__
 
         # Convert the datetime objects to ISO format
