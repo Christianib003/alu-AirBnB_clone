@@ -9,7 +9,7 @@
 
 # class TestInterpreter(unittest.TestCase):
 #     """Test the console interpreter"""
-    
+
 #     def setUp(self):
 #         """Create a new Interpreter instance before each test case"""
 #         self.interpreter = Interpreter()
@@ -19,7 +19,7 @@
 #         with patch("sys.stdout", new=StringIO()) as fake_out:
 #             self.interpreter.emptyline()
 #             self.assertEqual(fake_out.getvalue(), "")
-    
+
 #     def test_quit(self):
 #         """Test that the do_quit method stops the program console"""
 #         self.assertTrue(self.interpreter.do_quit("quit"))
@@ -37,8 +37,11 @@
 #             f.write("help\n")
 #         with patch("sys.stdout", new=StringIO()) as fake_out:
 #             Interpreter.run_from_file(filename)
-#             self.assertEqual(fake_out.getvalue(), "\nDocumented commands (type help <topic>):\n========================================\nEOF  help  quit\n\n")
-    
+#             self.assertEqual(fake_out.getvalue(),
+#               "\nDocumented commands (type help <topic>):
+#               \n========================================
+#               \nEOF  help  quit\n\n")
+
 #     def tearDown(self):
 #         """Handle cleanup activites after each test case"""
 #         del self.interpreter
