@@ -7,6 +7,7 @@ from io import StringIO
 
 from console import HBNBCommand as Interpreter
 
+
 class TestInterpreter(unittest.TestCase):
     """Test the console interpreter"""
 
@@ -36,7 +37,7 @@ class TestInterpreter(unittest.TestCase):
 
     def test_subtraction(self):
         """ Test that 2 - 2 = 0 """
-        self.assertTrue(2 -2 == 0)
+        self.assertTrue(2 - 2 == 0)
 
     def test_multiplication(self):
         """ Test that 2 * 2 = 4 """
