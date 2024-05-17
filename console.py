@@ -16,7 +16,7 @@ from models import storage
 
 class HBNBCommand(cmd.Cmd):
     """This is a command line interpreter for interacting with the program"""
-    
+
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
             new_instance = eval(args[0])()
             new_instance.save()
             print(new_instance.id)
-    
+
     def do_show(self, input):
         """Prints the string representation of an instance.
 
@@ -69,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
                 print(objects[key])
             else:
                 print("** no instance found **")
-    
+
     def do_destroy(self, input):
         """Deletes an instance based on the class name and id.
 
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
             else:
                 print("** no instance found **")
-    
+
     def do_all(self, input):
         """Prints all string representation of all instances based or not on the class name.
 
@@ -115,18 +115,18 @@ class HBNBCommand(cmd.Cmd):
         if len(args) == 0:
             objects = storage.all()
             print([str(obj) for obj in objects.values()])
-        
+
         # if an invalid class name is provided, notify user
         elif args[0] not in self.valid_classes:
             print("** class doesn't exist **")
-        
+
         # if a valid class name is provided, print all instances of that class
         else:
             objects = storage.all()
             for key, value in objects.items():
                 if key.split(".")[0] == args[0]:
                     print(str(value))
-    
+
     def do_update(self, input):
         """Updates an instance based on the class name and id by adding or updating attribute.
 
@@ -169,18 +169,18 @@ class HBNBCommand(cmd.Cmd):
     def do_quit(self, input):
         """Handle quiting interpreter when user types 'quit' command"""
         return True
-    
+
     def do_EOF(self, input):
         """Handle end-of-file condition. eg: user pressing 'ctrl + D'."""
         print()
         return True
-    
+
     def help(self):
         """Display help message"""
         print("Documented commands (type help <topic>):")
         print("========================================")
         print("EOF  help  quit")
-    
+
     @classmethod
     def run_from_file(cls, filename):
         """Run commands from a file"""
