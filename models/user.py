@@ -2,6 +2,7 @@
 """ Model for the User object """
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """
     This class defines the User object.
