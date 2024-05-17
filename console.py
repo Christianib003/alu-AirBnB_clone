@@ -13,13 +13,21 @@ from models.place import Place
 from models.review import Review
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
     """This is a command line interpreter for interacting with the program"""
     
     prompt = "(hbnb) "
 
     # Define classes which can be created using the "create" command
-    valid_classes = ["BaseModel", "User", "State", "City", "Amenity", "Place", "Review"]
+    valid_classes = ["BaseModel",
+                     "User",
+                     "State",
+                     "City",
+                     "Amenity",
+                     "Place",
+                     "Review"
+                     ]
 
     def do_create(self, input):
         """Create a new instance of a class"""
