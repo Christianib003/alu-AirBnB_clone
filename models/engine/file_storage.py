@@ -67,4 +67,3 @@ class FileStorage:
         Resets the storage system by clearing all objects.
         """
         self._FileStorage__objects = {}
-        
