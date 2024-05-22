@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-"""This module contains the Place class"""
+"""This module contains the Place classs"""
 
 from models.base_model import BaseModel
 
