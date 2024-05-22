@@ -9,7 +9,7 @@ from models.base_model import BaseModel
 
 class TestState(unittest.TestCase):
     """
-    Unit test class for State model
+    Unit test class for State models
     """
 
     def setUp(self):
