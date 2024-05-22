@@ -9,7 +9,7 @@ from console import HBNBCommand as Interpreter
 
 
 class TestInterpreter(unittest.TestCase):
-    """Test the console interpreter"""
+    """Test the console interpreters"""
 
     def setUp(self):
         """Create a new Interpreter instance before each test case"""
