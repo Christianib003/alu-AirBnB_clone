@@ -1,5 +1,5 @@
 #! /usr/bin/python3
-""" Model for the User object """
+""" Model for the User objects """
 from models.base_model import BaseModel
 
 
