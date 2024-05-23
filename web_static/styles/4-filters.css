@@ -24,3 +24,7 @@ button {
     height: 48px;
     margin: 0 30px 0 0;
 }
+
+button:hover {
+    opacity: 90%;
+}
