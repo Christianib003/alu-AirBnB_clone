@@ -9,6 +9,8 @@
     width: 100%;
     border: 1px #DDDDDD solid;
     border-radius: 4px;
+    display: flex;
+    align-items: center;
 }
 
 button {
@@ -18,4 +20,5 @@ button {
     border: none;
     width: 20%;
     border-radius: 4px;
+    height: 48px;
 }
