@@ -1,7 +1,7 @@
 .container {
     width: 1000px;
     margin: 30px 0 30px 0;
-    
+    display: flex;
 }
 
 .filters {
@@ -10,4 +10,8 @@
     width: 100%;
     border: 1px #DDDDDD solid;
     border-radius: 4px;
+}
+
+button {
+    font-size: 18px;
 }
