@@ -60,6 +60,7 @@ button:hover {
     border: #DDDDDD 1px solid;
     border-radius: 4px;
     display: none;
+    z-index: 2;
 }
 
 .popover-item {
