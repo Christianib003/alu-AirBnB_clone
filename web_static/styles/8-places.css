@@ -1,0 +1,27 @@
+
+.places {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.title {
+    font-size: 30px;
+    color: grey;
+    position: absolute;
+    left: 12%;
+}
+
+.place {
+    width: 390px;
+    padding: 20px;
+    margin: 70px 20px 0 20px;
+    border: 1px solid #FF5A5F;
+    border-radius: 4px;
+}
+
+.place-title {
+    font-size: 30px;
+    color: grey;
+    text-align: center;
+}
