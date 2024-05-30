@@ -47,10 +47,37 @@ button:hover {
     color: grey;
     font-size: 14px;
     font-weight: 400px;
-    margin-top: -15px;
+    margin: -15px 0 10px 0;
     padding-left: 15%;
 }
 
 .popover {
+    margin: 0 0 0 0;
     border: red 1px solid;
+    list-style-type: none;
+    background-color: #FAFAFA;
+    color: grey;
+    border: #DDDDDD 1px solid;
+    border-radius: 4px;
+    display: none;
+}
+
+.popover-item {
+    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0 15px 0;
+}
+
+.popover-subitem {
+    margin: 8px 0  0 20px;
+}
+
+.locations:hover .popover-loc {
+    display: block;
+}
+
+.amenities:hover .popover-amen {
+    display: block;
 }
